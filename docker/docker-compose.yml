@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  xiaoman:
+    image: ChatGPT:latest
+    container_name: ChatGPT
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "1024m"
+    ports:
+      - "8080:8080"
+    environment:
+      REPO_URL_GITSCRIPTS: http://192.168.0.21/huangcan/nestjs.git
+      REPO_BRANCH: main

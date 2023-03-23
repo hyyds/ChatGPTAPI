@@ -1,0 +1,33 @@
+{
+  "scripts": {
+    "start": "nodemon -e ts,tsx --exec ts-node ./src/main.ts",
+    "serve": "pm2 start ts-node -- -P ./tsconfig.build.json ./src/main.ts",
+    "log": "pm2 log",
+    "stop": "pm2 stop all"
+  },
+  "dependencies": {
+    "delay": "^5.0.0",
+    "eventsource-parser": "^0.0.5",
+    "expiry-map": "^2.0.0",
+    "html-to-md": "^0.8.3",
+    "p-timeout": "^6.0.0",
+    "puppeteer": "^19.4.0",
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-recaptcha": "npm:@fisch0920/puppeteer-extra-plugin-recaptcha@^3.6.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.1",
+    "random": "^4.1.0",
+    "remark": "^14.0.2",
+    "strip-markdown": "^5.0.0",
+    "tempy": "^3.0.0",
+    "uuid": "^9.0.0",
+    "@nestjs/platform-express": "^9.3.8",
+    "@nestjs/swagger": "^6.2.1",
+    "@nestjs/core": "^9.3.9",
+    "nest-knife4j": "^1.0.1",
+    "nodemon": "^2.0.20",
+    "swagger-ui-express": "^4.6.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.4.2"
+  }
+}
