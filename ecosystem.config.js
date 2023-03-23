@@ -9,14 +9,3 @@ module.exports = {
   ],
 };
 
-{
-  "proxies":
-  {
-    "default":
-    {
-      "httpProxy": "http://120.25.125.165:1189",
-        "httpsProxy": "http://120.25.125.165:1189",
-        "noProxy": "*.test.example.com,.example2.com,127.0.0.0/8"
-    }
-  }
-}
