@@ -14,3 +14,5 @@ services:
     environment:
       REPO_URL_GITSCRIPTS: https://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@github.com/hyyds/ChatGPTAPI.git
       REPO_BRANCH: main
+      HTTP_PROXY: "http://120.25.125.165:1189"
+      HTTPS_PROXY: "http://120.25.125.165:1189"

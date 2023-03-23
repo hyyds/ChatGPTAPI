@@ -31,7 +31,9 @@ async function bootstrap() {
   ]);
   await app.listen(8080);
   const GPT =  await F()
-  const api = new GPT({})
+  const api = new GPT({
+
+  })
   await api.initSession()
   return api
 }
