@@ -7,10 +7,12 @@ LABEL AUTHOR="hc" \
 ENV REPO_URL=https://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@github.com/hyyds/ChatGPTAPI.git \
     REPO_BRANCH=main
 
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+
 RUN set -ex \
     && apk update \
     && apk upgrade \
-    && apk add --no-cache bash tzdata git moreutils curl jq openssh-client \
+    && apk add --no-cache bash chromium tzdata git moreutils curl jq openssh-client \
     && rm -rf /var/cache/apk/* \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
