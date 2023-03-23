@@ -29,7 +29,7 @@ async function bootstrap() {
       location: `/api-json`,
     },
   ]);
-  await app.listen(8080);
+  await app.listen(80);
   const GPT =  await F()
   const api = new GPT({
 
