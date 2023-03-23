@@ -46,7 +46,7 @@ echo
 echo "第五步：构建本地镜像文件"
 echo
 
-docker image build ./ -t xiaoman:latest
+docker image build ./ -t ChatGPTAPI:latest
 
 echo
 echo "本地镜像文件构建成功"
@@ -67,7 +67,7 @@ echo
 echo "第七步：输出容器日志"
 echo
 
-docker logs -f xiaoman
+docker logs -f ChatGPTAPI
 
 echo
 echo "容器日志输出成功"

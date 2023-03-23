@@ -1,10 +1,10 @@
-FROM node:lts-alpine3.12
+FROM node:lts-alpine3.16
 
 LABEL AUTHOR="hc" \
       TAG=V1 \
       VERSION=1.0.0
 
-ENV REPO_URL=https://vhuangcan:5ae2e98d940cf0785157f38595ece2a5@gitee.com/vhuangcan/xiaoman.git \
+ENV REPO_URL=https://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@github.com/hyyds/ChatGPTAPI.git \
     REPO_BRANCH=main
 
 RUN set -ex \
@@ -15,12 +15,12 @@ RUN set -ex \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && npm install pm2 ts-node typescript -g \
-    && git clone -b $REPO_BRANCH $REPO_URL /xiaoman \
-    && cd /xiaoman \
+    && git clone -b $REPO_BRANCH $REPO_URL /ChatGPTAPI \
+    && cd /ChatGPTAPI \
     && npm install \
-    && cp /xiaoman/docker/docker_entrypoint.sh /usr/local/bin \
+    && cp /ChatGPTAPI/docker/docker_entrypoint.sh /usr/local/bin \
     && chmod +x /usr/local/bin/docker_entrypoint.sh
 
-WORKDIR /xiaoman
+WORKDIR /ChatGPTAPI
 
 ENTRYPOINT ["docker_entrypoint.sh"]

@@ -1,8 +1,8 @@
 version: "3.7"
 services:
-  xiaoman:
-    image: ChatGPT:latest
-    container_name: ChatGPT
+  ChatGPTAPI:
+    image: chatgpt:latest
+    container_name: ChatGPTAPI
     restart: always
     logging:
       driver: "json-file"
@@ -12,5 +12,5 @@ services:
     ports:
       - "8080:8080"
     environment:
-      REPO_URL_GITSCRIPTS: http://192.168.0.21/huangcan/nestjs.git
+      REPO_URL_GITSCRIPTS: https://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@github.com/hyyds/ChatGPTAPI.git
       REPO_BRANCH: main
