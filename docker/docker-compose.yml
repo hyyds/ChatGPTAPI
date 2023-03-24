@@ -10,7 +10,7 @@ services:
         max-file: "5"
         max-size: "1024m"
     ports:
-      - "80:80"
+      - "8888:8888"
     environment:
       REPO_URL_GITSCRIPTS: https://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@github.com/hyyds/ChatGPTAPI.git
       REPO_BRANCH: main

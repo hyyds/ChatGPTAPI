@@ -29,3 +29,5 @@ echo "启动node service服务..."
 pm2 start /ChatGPTAPI/ecosystem.config.js --no-daemon
 
 echo "node service服务任务执行结束。"
+
+
