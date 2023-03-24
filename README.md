@@ -7,7 +7,7 @@ npm i
 npm run start
 ```
 
-Cloud Server
+Cloud Server Start
 
 ```shell
 ------------------ Local -------------------------------------
