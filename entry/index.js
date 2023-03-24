@@ -6,7 +6,7 @@
  * @ Description:
  */
 module.exports = async function  () {
-    const { ChatGPTAPIBrowser } = await import("../chatgpt/build/index.js");
+    const { ChatGPTAPIBrowser } = await import("../chatgpt/index.js");
     return ChatGPTAPIBrowser
 }
 

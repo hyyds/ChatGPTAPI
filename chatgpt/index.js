@@ -1421,16 +1421,6 @@ var ChatGPTAPIBrowser = class extends AChatGPTAPI {
     this._messageOnProgressHandlers = {};
     this._userDataDir =
       userDataDir ?? temporaryDirectory({ prefix: this._email });
-    // if (!this._email) {
-    //   const error = new ChatGPTError("ChatGPT invalid email");
-    //   error.statusCode = 401;
-    //   throw error;
-    // }
-    // if (!this._password) {
-    //   const error = new ChatGPTError("ChatGPT invalid password");
-    //   error.statusCode = 401;
-    //   throw error;
-    // }
   }
   async initSession() {
     if (this._browser) {
@@ -1448,34 +1438,6 @@ var ChatGPTAPIBrowser = class extends AChatGPTAPI {
       this._page = await getPage(this._browser, {
         proxyServer: this._proxyServer,
       });
-      // this._page.evaluateOnNewDocument(() => {
-      //   window.localStorage.setItem("oai/apps/hasSeenOnboarding/chat", "true");
-      //   window.localStorage.setItem(
-      //     "oai/apps/hasSeenReleaseAnnouncement/2022-12-15",
-      //     "true"
-      //   );
-      //   window.localStorage.setItem(
-      //     "oai/apps/hasSeenReleaseAnnouncement/2022-12-19",
-      //     "true"
-      //   );
-      //   window.localStorage.setItem(
-      //     "oai/apps/hasSeenReleaseAnnouncement/2023-01-09",
-      //     "true"
-      //   );
-      // });
-      // this._page.on("request", this._onRequest.bind(this));
-      // this._page.on("response", this._onResponse.bind(this));
-      // const authInfo = await getOpenAIAuth({
-      //   email: this._email,
-      //   password: this._password,
-      //   browser: this._browser,
-      //   page: this._page,
-      //   isGoogleLogin: this._isGoogleLogin,
-      //   isMicrosoftLogin: this._isMicrosoftLogin
-      // });
-      // if (this._debug) {
-      //   console.log("chatgpt", this._email, "auth", authInfo);
-      // }
     } catch (err) {
       if (this._browser) {
         await this._browser.close();
@@ -1510,52 +1472,7 @@ var ChatGPTAPIBrowser = class extends AChatGPTAPI {
         await Promise.resolve();
       }
     };
-
     await verifyCf();
-
-    // await this._page.waitForNavigation()
-    // const pageCookies = await this._page.cookies();
-    // const cookies = pageCookies.reduce(
-    //     (map, cookie) => ({ ...map, [cookie.name]: cookie }),
-    //     {}
-    // );
-    // this._clearanceToken = cookies['cf_clearance'].value
-    // console.log( this._clearanceToken)
-    // await this._page.exposeFunction(
-    //   "ChatGPTAPIBrowserOnProgress",
-    //   (partialResponse) => {
-    //     if (partialResponse == null ? void 0 : partialResponse.origMessageId) {
-    //       const onProgress = this._messageOnProgressHandlers[partialResponse.origMessageId];
-    //       if (onProgress) {
-    //         onProgress(partialResponse);
-    //         return;
-    //       }
-    //     }
-    //   }
-    // );
-    // do {
-    //   const modalSelector = '[data-headlessui-state="open"]';
-    //   try {
-    //     if (!await this._page.$(modalSelector)) {
-    //       break;
-    //     }
-    //     await this._page.click(`${modalSelector} button:last-child`);
-    //   } catch (err) {
-    //     break;
-    //   }
-    //   await delay2(300);
-    // } while (true);
-    // if (!await this.getIsAuthenticated()) {
-    //   if (!this._accessToken) {
-    //     console.warn("no access token");
-    //   } else {
-    //     console.warn("failed to find prompt textarea");
-    //   }
-    //   throw new ChatGPTError("Failed to authenticate session");
-    // }
-    // if (this._minimize) {
-    //   return minimizePage(this._page);
-    // }
   }
   async resetSession() {
     console.log(`ChatGPT resetSession...`);
