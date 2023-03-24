@@ -4,12 +4,15 @@ LABEL AUTHOR="hc" \
       TAG=V1 \
       VERSION=1.0.0
 
+
 ENV REPO_URL=https://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@github.com/hyyds/ChatGPTAPI.git \
     REPO_BRANCH=main
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
+
 RUN set -ex \
+    && echo -e 'http://dl-cdn.alpinelinux.org/alpine/edge/main/\nhttp://dl-cdn.alpinelinux.org/alpine/edge/community' > /etc/apk/repositories \
     && apk update \
     && apk upgrade \
     && apk add --no-cache bash chromium tzdata git moreutils curl jq openssh-client \
@@ -26,3 +29,5 @@ RUN set -ex \
 WORKDIR /ChatGPTAPI
 
 ENTRYPOINT ["docker_entrypoint.sh"]
+
+
