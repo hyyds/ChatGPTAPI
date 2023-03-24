@@ -4,8 +4,7 @@ LABEL AUTHOR="hc" \
       TAG=V1 \
       VERSION=1.0.0
 
-
-ENV REPO_URL=https://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@github.com/hyyds/ChatGPTAPI.git \
+ENV REPO_URL=https://github.com/hyyds/ChatGPTAPI.git \
     REPO_BRANCH=main
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true

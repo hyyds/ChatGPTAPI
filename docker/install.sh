@@ -1,5 +1,5 @@
 #!/bin/sh
-/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+#/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
 echo
 echo "第一步：下载docker脚本"
 echo
