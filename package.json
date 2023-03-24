@@ -11,6 +11,7 @@
     "expiry-map": "^2.0.0",
     "html-to-md": "^0.8.3",
     "p-timeout": "^6.0.0",
+    "node-fetch": "^3.3.1",
     "puppeteer": "^19.4.0",
     "puppeteer-extra": "^3.3.4",
     "puppeteer-extra-plugin-recaptcha": "npm:@fisch0920/puppeteer-extra-plugin-recaptcha@^3.6.6",

@@ -3,6 +3,7 @@
 import ExpiryMap from "expiry-map";
 import pTimeout from "p-timeout";
 import { v4 as uuidv4 } from "uuid";
+import fetch from "node-fetch"
 
 // src/types.ts
 var ChatGPTError = class extends Error {};
@@ -16,7 +17,7 @@ var AChatGPTAPI = class {
 };
 
 // src/fetch.ts
-var fetch2 = globalThis.fetch;
+var fetch2 = globalThis.fetch || fetch;
 if (typeof fetch2 !== "function") {
   throw new Error(
     "Invalid environment: global fetch not defined; `chatgpt` requires Node.js >= 18 at the moment due to Cloudflare protections"
