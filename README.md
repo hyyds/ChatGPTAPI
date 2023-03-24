@@ -10,9 +10,10 @@ npm run start
 Cloud Server
 
 ```shell
+------------------ Local -------------------------------------
 cd docker
 
-IF
+If
 // Mac(Intel) and window
 docker image build ./ -t chatgpt:latest
 
@@ -26,11 +27,16 @@ docker save -0 chatgpt:latest
 // Images Upload Cloud Service
 scp -r chatgpt.tar root@xxx:~/
 
+------------------ Cloud Service ------------------------------
+
+// Clone Code To Cloud Service
+git clone https://github.com/hyyds/ChatGPTAPI.git
+
 // Import Docker Images
 docker load < chatgpt.tar
 
 // Start ChaGPTAPI Imagrs
-cd docker && docker compose up -d
+cd ChatGPTAPI/docker && docker compose up -d
 
 ```
 
