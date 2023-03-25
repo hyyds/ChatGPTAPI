@@ -8,7 +8,8 @@ export class AppService {
     const opts = {
       parentMessageId:  query.messageId,
     }
-    const res = await api.sendMessage(query.content,opts)
+    const func = async ()=> await api.sendMessage(query.content,opts).catch(async ()=> await func())
+    const res = await func()
     return {
       messageId: res.messageId,
       message: res.response
