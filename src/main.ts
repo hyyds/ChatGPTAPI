@@ -3,7 +3,7 @@ import { AppModule } from "./app.module";
 import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
 import { knife4jSetup } from "nest-knife4j";
 // @ts-ignore
-import F = require('../entry/index.js')
+import F = require("../entry/index.js");
 
 // declare const module: any;
 async function bootstrap() {
@@ -30,13 +30,11 @@ async function bootstrap() {
     },
   ]);
   await app.listen(80);
-  const GPT =  await F()
-  const api = new GPT({})
-  await api.initSession()
-  return api
+  const GPT = await F();
+  const api = new GPT({});
+  await api.initSession();
+  return api;
 }
 
 const api = bootstrap();
-export default api
-
-
+export default api;
